@@ -1,0 +1,232 @@
+:root {
+    --celeste: #5095c5;
+    --blanco: #fff;
+    --amarillo: #f2c916;
+    --oscuro: #000;
+    --titulos: 'Arima Madurai', cursive;
+    --parrafos: 'Mulish', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    overflow-x: hidden;
+}
+
+*,*::after, *::before {
+    box-sizing: inherit;
+}
+
+/* globales */
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
+h1, h2 {
+    font-family: var(--titulos);
+}
+
+h3, p, a{
+    font-family: var(--parrafos);
+}
+
+.celeste {
+    color: var(--celeste);
+}
+
+.ocultar {
+    display: none;
+}
+
+.btn-cerrar{
+    color: var(--blanco);
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.pantalla-completa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);    
+    z-index: 4;
+}
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.btn-cerrar:hover {
+    cursor: pointer;
+}
+
+.btn {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding: 1rem 5rem;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+@media(min-width: 768px) {
+    .btn {
+        font-size: 2.3rem;
+    }
+}
+
+.bordes {
+    border: 2px solid var(--blanco);
+}
+
+@media(min-width: 768px ) {
+
+}
+
+.bordes:hover {
+    color: var(--celeste);
+    background-color: var(--blanco);
+}
+
+/* encabezado */
+.contenedor-navegacion {
+    background-color: var(--oscuro);
+    position: relative;
+    z-index: 5;
+}
+
+.contenido-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2, .navegacion a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.navegacion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 40rem;
+    padding: 3rem 4rem;
+    background-color: var(--oscuro);
+    animation: desplazamiento .5s ease-in-out;
+}
+
+.navegacion a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 1.5rem;
+    padding-left: 4rem;
+    transition: color .3s ease-in-out;
+    text-align: center;
+    
+
+}
+
+@media(min-width: 768px) {
+    .navegacion a {
+        text-align: left;
+    }
+}
+
+
+/* Hace que los enlaces pares tengan hover de color rojo */
+.navegacion a:nth-child(even):hover {
+    color: var(--rojo);
+}
+/* Hace que los enlaces impares tengan hover de color verde */
+.navegacion a:nth-child(odd):hover {
+    color: var(--verde);
+}
+
+
+.navegacion a:first-of-type {
+    margin-top: 5.5rem;
+}
+
+.logo h2{
+    font-size: 3rem;
+}
+
+.hamburgesa:hover {
+    cursor: pointer;
+}
+
+.hamburgesa span {
+    background-color: var(--blanco);
+    display: block;
+    width: 5rem;
+    height: .5rem;
+    margin-bottom: .5rem;
+}
+
+
+/* Contenido header */
+
+.contenido-header {
+    position: relative;
+}
+
+.contenido-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.contenedor-encabezado video {
+    width: 100%;
+    height: 100%;
+}
+
+.texto-encabezado {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-encabezado h2{
+    color: var(--blanco);
+    font-size: 4rem;
+}
+
+
+@media(min-width: 768px) {
+    .texto-encabezado h2 {
+        font-size: 8rem;
+    }
+}
